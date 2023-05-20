@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Products } from './product.entitie';
+import { Products } from './entities/product.entitie';
 import { Repository } from 'typeorm';
 import { CreateNewProjectDto } from './dto/create-product.dto';
 import { UpdateProjectDto } from './dto/update-product.dto';
@@ -14,7 +14,7 @@ export class ProductsService {
 
   createProduct(product: CreateNewProjectDto): string {
     this.ProductsRepository.findOne({where:{code: product.code}})
-    this.ProductsRepository.create(product);
+    this.ProductsRepository.save(product);
     return 'Se ha registrado un producto nuevo satisfactoriamente';
   }
   getAllProducts() {

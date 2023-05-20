@@ -5,4 +5,4 @@ export class CreateNewProjectDto{
   image: string
   stock: number
   price: string
-} 
+}
