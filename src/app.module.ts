@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 import { ConfigModule } from '@nestjs/config';
+import { QueryParamsController } from './query-params/query-params.controller';
+
 
 @Module({
   imports: [
@@ -27,7 +29,7 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule,
     UsersModule,
   ],
-  controllers: [],
+  controllers: [QueryParamsController],
   providers: [],
 })
 export class AppModule {}
